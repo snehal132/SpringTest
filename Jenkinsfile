@@ -28,6 +28,10 @@ node {
         echo 'Testing Junit test cases'
         bat 'mvn test'
     }
+    stage('Sonar') {
+        echo 'Generating Sonar report'
+        bat 'mvn sonar:sonar'
+    }
     stage('Archive') {
         echo 'Zip build package for deployment'
         bat 'tar -cvzf tssidemobedist.tar.gz --strip-components=1 target\\spring-rest-junit.war'
