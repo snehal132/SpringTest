@@ -17,8 +17,8 @@ node {
     stage('Checkout') {
         echo 'Fetching latest code from GIT'
         //deleteDir()
-        git credentialsId: 'Samrat GitHub', url: 'https://github.com/snehal132/SpringTest.git'
-        //checkout scm
+        //git credentialsId: 'Samrat GitHub', url: 'https://github.com/snehal132/SpringTest.git'
+        checkout scm
     }
     stage('Compile') {
         echo 'Compiling Code'
